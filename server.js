@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
-const path = require('path'); // Import the 'path' module
+const path = require('path'); 
+const bcrypt = require('bcrypt');
 
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 let userDatabase = [];
 
 // Load user database from file
+// Load user database from file
 fs.readFile('userDatabase.json', 'utf8', (err, data) => {
   if (err) {
     console.error("Error reading user database file:", err);
@@ -22,6 +24,12 @@ fs.readFile('userDatabase.json', 'utf8', (err, data) => {
   try {
     userDatabase = JSON.parse(data);
     console.log("User database loaded successfully.");
+    
+    // Ensure userDatabase is an array
+    if (!Array.isArray(userDatabase)) {
+      console.error("User database is not in the expected format. Initializing as an empty array.");
+      userDatabase = [];
+    }
   } catch (err) {
     // Handle invalid JSON or empty file
     if (err instanceof SyntaxError) {
@@ -39,16 +47,23 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Route for user registration
-app.post('/register', (req, res) => {
+
+
+app.post('/register', async (req, res) => {
+  const { username, password, email } = req.body;
+
+  // Hash the password using bcrypt
+  const hashedPassword = await bcrypt.hash(password, 10); // 10 is the saltRounds
+
   const newUser = {
     id: uuidv4(),
-    username: req.body.username,
-    password: req.body.password,
-    email: req.body.email
+    username,
+    password: hashedPassword, // Store the hashed password
+    email
   };
 
-  if (!isValidUser(newUser)) {
+  // Validate the user before saving
+  if (!isValidUser(newUser, hashedPassword)) {
     res.status(400).send("Invalid User").end();
     return;
   }
@@ -61,7 +76,7 @@ app.post('/register', (req, res) => {
   res.status(201).send({ username: newUser.username, id: newUser.id }).end();
 });
 
-const isValidUser = (user) => {
+const isValidUser = async (user, hashedPassword) => {
   if (!user.username || !user.password || !user.email) {
     return false;
   }
@@ -78,8 +93,11 @@ const isValidUser = (user) => {
     return false;
   }
 
-  return true;
+  // Compare password with hashed password using bcrypt
+  return await bcrypt.compare(user.password, hashedPassword);
 };
+
+
 
 // Function to save user database to file
 const saveUserDatabase = () => {

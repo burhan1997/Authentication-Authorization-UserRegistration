@@ -1,50 +1,38 @@
 [
   {
-    "id": "1",
-    "username": "john_doe",
-    "password": "password123",
-    "email": "john@example.com"
-  },
-  {
-    "id": "2",
-    "username": "jane_smith",
-    "password": "abc123",
-    "email": "jane@example.com"
-  },
-  {
-    "id": "41f45978-2034-4648-9b68-b80430b1df1e",
-    "username": "john_doe",
-    "password": "password123",
-    "email": "john@example.com"
-  },
-  {
-    "id": "4850a56c-54ca-481c-9536-573b2f20b8f6",
-    "username": "john_doe",
-    "password": "password123",
-    "email": "john@example.com"
-  },
-  {
-    "id": "f0f49ec0-a7a7-4bf4-b258-5dfd054cde9c",
-    "username": "john_doe",
-    "password": "password123",
-    "email": "john@example.com"
-  },
-  {
-    "id": "f81b1e9f-49d8-4624-baf4-2dc14e41eec8",
-    "username": "john_doe",
-    "password": "password123",
-    "email": "john@example.com"
-  },
-  {
-    "id": "d8addbf3-042a-4652-93c5-e6530de208fa",
-    "username": "johoe",
-    "password": "password123",
-    "email": "john@example.com"
-  },
-  {
-    "id": "a93af52c-8c66-49b9-bfb6-28a9da5ba14d",
+    "id": "ce4e394c-ce85-4260-8e99-491438e29f91",
     "username": "burhan",
-    "password": "rdetyretyryeertyerty",
-    "email": "burhan@hotmasil.com"
+    "password": "$2b$10$wz23Voj/yZu3q1ys5a8jGuJKa.Ityf66UStYmOK2m6QaJY3sGB5aC",
+    "email": "alper@gmail.com"
+  },
+  {
+    "id": "418c975d-b032-42fe-889c-a75a42309e99",
+    "username": "asdfasdfasd",
+    "password": "$2b$10$nFzucTCcVn6Pa4Nk.fRM6ulxGib2W6voSR0Dy4jh/I6Gin.yElY3u",
+    "email": "alpeasdfsadfr@gmail.com"
+  },
+  {
+    "id": "6bf866d7-0a09-43ed-8daa-6d977e550bea",
+    "username": "burhan",
+    "password": "$2b$10$2fKAmoC6Z.LszrCzsT/MpuUii11TYduODoq.YCx80HmUl/PYkNCQS",
+    "email": "alpeasdfsadfr@gmail.com"
+  },
+  {
+    "id": "4e551ac3-2869-4fac-8037-3704ee259cd8",
+    "username": "burhan",
+    "password": "$2b$10$KH5trFNvLivbY8BkcKXxQO0LvlIkgPFxAEvEGzGKxpIIMv8HQeQV2",
+    "email": "alpeasdfsadfr@gmail.com"
+  },
+  {
+    "id": "971a6eb6-c2a9-45da-897e-047557e4188c",
+    "username": "burhan",
+    "password": "$2b$10$IqPKh75/GBu8GYClizHOhObBqo6IFM4yl3cBTZcU1r8xTHK1sAEPW",
+    "email": "alpeasdfsadfr@gmail.com"
+  },
+  {
+    "id": "b98198c2-c8e3-4cc8-a4f2-da71e8dc8c67",
+    "username": "joe",
+    "password": "$2b$10$/26BQpIuKpRsTUmv2whsZ.gMnp7OJGPKmXX15UN6AOX4sLUauAP7a",
+    "email": "joe@gmail.com"
   }
 ]
