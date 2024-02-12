@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "username": "john_doe",
+    "password": "password123",
+    "email": "john@example.com"
+  },
+  {
+    "id": "2",
+    "username": "jane_smith",
+    "password": "abc123",
+    "email": "jane@example.com"
+  },
+  {
+    "id": "41f45978-2034-4648-9b68-b80430b1df1e",
+    "username": "john_doe",
+    "password": "password123",
+    "email": "john@example.com"
+  },
+  {
+    "id": "4850a56c-54ca-481c-9536-573b2f20b8f6",
+    "username": "john_doe",
+    "password": "password123",
+    "email": "john@example.com"
+  },
+  {
+    "id": "f0f49ec0-a7a7-4bf4-b258-5dfd054cde9c",
+    "username": "john_doe",
+    "password": "password123",
+    "email": "john@example.com"
+  },
+  {
+    "id": "f81b1e9f-49d8-4624-baf4-2dc14e41eec8",
+    "username": "john_doe",
+    "password": "password123",
+    "email": "john@example.com"
+  },
+  {
+    "id": "d8addbf3-042a-4652-93c5-e6530de208fa",
+    "username": "johoe",
+    "password": "password123",
+    "email": "john@example.com"
+  },
+  {
+    "id": "a93af52c-8c66-49b9-bfb6-28a9da5ba14d",
+    "username": "burhan",
+    "password": "rdetyretyryeertyerty",
+    "email": "burhan@hotmasil.com"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "authentication-authorization-userregistration",
+  "version": "1.0.0",
+  "description": "Authentication is the process of verifying the identity of a user, process, or device, to grant access to resources in a system. This process is critical for the security and privacy when multiple users share the same resource.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "burhan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.1"
+  }
+}
