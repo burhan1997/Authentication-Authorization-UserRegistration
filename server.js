@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
-const path = require('path'); 
+const path = require('path');
 const bcrypt = require('bcrypt');
-
+const crypto = require('crypto');
 
 const app = express();
 const PORT = 3000;
@@ -13,6 +13,7 @@ const PORT = 3000;
 app.use(bodyParser.json());
 
 let userDatabase = [];
+const sessions = {};
 
 // Load user database from file
 fs.readFile('userDatabase.json', 'utf8', (err, data) => {
@@ -43,11 +44,10 @@ fs.readFile('userDatabase.json', 'utf8', (err, data) => {
 
 // Route for homepage
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-
-
+// Route for user registration
 app.post('/register', async (req, res) => {
   const { username, password, email } = req.body;
 
@@ -62,7 +62,7 @@ app.post('/register', async (req, res) => {
   };
 
   // Validate the user before saving
-  if (!isValidUser(newUser, hashedPassword)) {
+  if (!isValidUser(newUser)) {
     res.status(400).send("Invalid User").end();
     return;
   }
@@ -75,28 +75,51 @@ app.post('/register', async (req, res) => {
   res.status(201).send({ username: newUser.username, id: newUser.id }).end();
 });
 
-const isValidUser = async (user, hashedPassword) => {
-  if (!user.username || !user.password || !user.email) {
-    return false;
+// Route for user login
+// Route for user login
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+
+  // Validate username and password
+  const user = userDatabase.find(user => user.username === username);
+  if (!user || !(await bcrypt.compare(password, user.password))) {
+    return res.status(401).json({ message: 'Invalid username / password combination' });
   }
 
-  // Check if password meets minimum length requirement
-  const MIN_PASSWORD_LENGTH = 6;
-  if (user.password.length < MIN_PASSWORD_LENGTH) {
-    return false;
-  }
+  // Generate a unique session ID
+  const sessionId = crypto.randomBytes(16).toString('hex');
 
-  // Check if username has been previously registered
-  const existingUser = userDatabase.find(existingUser => existingUser.username === user.username);
-  if (existingUser) {
-    return false;
-  }
+  // Associate session ID with the username
+  sessions[sessionId] = username;
 
-  // Compare password with hashed password using bcrypt
-  return await bcrypt.compare(user.password, hashedPassword);
+  // Send session ID as part of the response
+  res.status(200).json({ sessionId }); // Include session ID in the response
+});
+
+
+// Middleware to authenticate requests using session ID
+app.use((req, res, next) => {
+  const sessionId = req.headers['session-id']; // Assuming session ID is sent in the request headers
+  if (!sessionId || !sessions[sessionId]) {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+  // Add authenticated user information to the request object
+  req.user = { username: sessions[sessionId] };
+  next();
+});
+
+// Example authenticated route
+app.get('/profile', (req, res) => {
+  // Access authenticated user information from req.user
+  const username = req.user.username;
+  res.status(200).json({ message: `Welcome, ${username}!` });
+});
+
+// Function to validate user input before registration
+const isValidUser = (user) => {
+  // Your validation logic goes here
+  return true; // Placeholder
 };
-
-
 
 // Function to save user database to file
 const saveUserDatabase = () => {

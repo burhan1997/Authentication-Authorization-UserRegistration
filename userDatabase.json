@@ -34,5 +34,53 @@
     "username": "joe",
     "password": "$2b$10$/26BQpIuKpRsTUmv2whsZ.gMnp7OJGPKmXX15UN6AOX4sLUauAP7a",
     "email": "joe@gmail.com"
+  },
+  {
+    "id": "106423fb-931e-4f21-8a93-96362812c590",
+    "username": "joexxx",
+    "password": "$2b$10$BRpT02e9lcn2OoK96DmF1.tilB/Sr6JehD.w9Yq2K/MYzBd/LI6xy",
+    "email": "joe@gmail.com"
+  },
+  {
+    "id": "69a505ce-a6b5-44d3-833c-a813e45342dd",
+    "username": "joexxxx",
+    "password": "$2b$10$1FXxBkPHDLESFVxd9M5zL.ydBC9PK1dWBYtrtgkyrHDek.7GVQ0W6",
+    "email": "joe@gmail.com"
+  },
+  {
+    "id": "383cfb85-05a1-4545-b47f-91edd90a1b12",
+    "username": "sdfgdfgsg",
+    "password": "$2b$10$gDZVn7U5Tph45H/x8pmJVuiR4euDbHuE.efHIb9l4wQzVir33LrDG",
+    "email": "sgfsdgfsdfs@dgsfgs"
+  },
+  {
+    "id": "43202372-1578-47f1-ace9-b67082a7dd91",
+    "username": "sdfgdfgsg",
+    "password": "$2b$10$UjxVDvG0nAh/wlDeUG.m0eFndhFRrXBNG5XqgHo54Cjwkm8TGsPN.",
+    "email": "sgfsdgfsdfs@dgsfgs"
+  },
+  {
+    "id": "01a6a75d-bac1-42f2-85fe-47f2ce16a70f",
+    "username": "sdfgdfgsg",
+    "password": "$2b$10$h8/Re5G5MDzaTlyznFlSr.1MTLt/2nPYyP8pHAnNXbc5e.Zlm1OzC",
+    "email": "sgfsdgfsdfs@dgsfgs"
+  },
+  {
+    "id": "17e1b3d0-3ec3-4f25-987c-1f5a30611a02",
+    "username": "sdfgdfgsg",
+    "password": "$2b$10$PdZAJfcxnGbaXC4fQ2X50OSqeTozd/0mhea7uqFo5R0A8pea5TTMW",
+    "email": "sgfsdgfsdfs@dgsfgs"
+  },
+  {
+    "id": "56cc73fc-aff7-4950-828b-e3f026f00a56",
+    "username": "sdfgdfgsg",
+    "password": "$2b$10$0H1BtEVTSdyxW/G//ULT3ubTefD31/xKYl4rVJXkODsv4eveIf0G6",
+    "email": "sgfsdgfsdfs@dgsfgs"
+  },
+  {
+    "id": "4c6df5a0-2ee3-48e9-ba6d-da0c64e30974",
+    "username": "sdfgdfgsg",
+    "password": "$2b$10$sgemxfW/q/7oFKBEdIimqe4OOyoekZpeOEK/jF04VEJa02rwFPeJ2",
+    "email": "sgfsdgfsdfs@dgsfgs"
   }
 ]
