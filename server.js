@@ -15,7 +15,6 @@ app.use(bodyParser.json());
 let userDatabase = [];
 
 // Load user database from file
-// Load user database from file
 fs.readFile('userDatabase.json', 'utf8', (err, data) => {
   if (err) {
     console.error("Error reading user database file:", err);
